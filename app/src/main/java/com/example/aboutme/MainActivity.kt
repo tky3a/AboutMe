@@ -50,7 +50,12 @@ class MainActivity : AppCompatActivity() {
         editText.visibility = View.VISIBLE
         // doneボタンを非表示から表示に変更
         doneBtn.visibility = View.VISIBLE
-        //
+        // nicknameTextを表示から非表示にする
         view.visibility = View.GONE
+        // 入力フォームにフォーカスする
+        editText.requestFocus()
+        // キーボードを表示する
+        val imm = getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
+        imm.showSoftInput(editText, 0)
     }
 }
